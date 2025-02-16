@@ -124,7 +124,8 @@
     "@babel/parser": "^7.26.9",
     "@babel/traverse": "^7.26.9",
     "@babel/types": "^7.26.9",
-    "unplugin": "^2.1.2"
+    "unplugin": "^2.1.2",
+    "unplugin-utils": "^0.2.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.2.0",
