@@ -21,7 +21,8 @@ export const transform = (code: string, id: string, opt: OptionsResolved) => {
 			if (
 				path.node.name.type === "JSXIdentifier" &&
 				path.node.loc &&
-				!path.isJSXFragment()
+				!path.isJSXFragment() &&
+				path.node.name.name !== "Fragment"
 			) {
 				const newAttributes = [] as t.JSXAttribute[];
 				if (

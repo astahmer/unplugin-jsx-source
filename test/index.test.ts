@@ -44,6 +44,23 @@ test("ignore fragment", () => {
 	`);
 });
 
+test("ignore named fragment", () => {
+	const code = `
+    export const App = () => {
+      return (
+          <Fragment>hello</Fragment>
+      )
+    }
+    `;
+	expect(
+		transform(code, fileName, resolveOption({})).code,
+	).toMatchInlineSnapshot(`
+		"export const App = () => {
+		  return <Fragment>hello</Fragment>;
+		};"
+	`);
+});
+
 test("options.attributes.at", () => {
 	const code = `
     export const App = () => {
