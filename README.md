@@ -18,11 +18,11 @@ npm i unplugin-jsx-source
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-jsx-source/vite'
+import jsxSource from 'unplugin-jsx-source/vite'
 
 export default defineConfig({
   plugins: [
-    Starter({ /* options */ }),
+   jsxSource({ /* options */ }),
   ],
 })
 ```
@@ -36,11 +36,11 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import Starter from 'unplugin-jsx-source/rollup'
+import jsxSource from 'unplugin-jsx-source/rollup'
 
 export default {
   plugins: [
-    Starter({ /* options */ }),
+   jsxSource({ /* options */ }),
   ],
 }
 ```
@@ -100,10 +100,10 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild'
-import Starter from 'unplugin-jsx-source/esbuild'
+import jsxSource from 'unplugin-jsx-source/esbuild'
 
 build({
-  plugins: [Starter()],
+  plugins:  jsxSource()],
 })
 ```
 
@@ -111,7 +111,7 @@ build({
 
 ## Made with
 
-https://github.com/unplugin/unplugin-starter/
+https://github.com/unplugin/unplugin-starter
 
 cause I saw that idea again from Nate (Tamagui's author) https://x.com/natebirdman/status/1890913196967419958
 

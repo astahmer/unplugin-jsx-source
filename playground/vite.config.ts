@@ -7,7 +7,7 @@ export default defineConfig({
 	plugins: [
 		Inspect(),
 		Unplugin({
-			attribute: "data-source",
+			// attribute: "data-source",
 		}),
 		react(),
 	],
