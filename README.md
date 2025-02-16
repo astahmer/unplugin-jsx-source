@@ -4,7 +4,8 @@
 
 A plugin designed to automatically annotate your JSX components with a `data-at`(configurable) attribute, indicating the file name and line number for easier debugging and development.
 
-<img width="822" alt="image" src="https://github.com/user-attachments/assets/cb9a2073-3466-4e47-a988-16a7cbcba957" />
+<img width="613" alt="image" src="https://github.com/user-attachments/assets/0e3fb65f-5d01-4a19-9888-35e8eff94afb" />
+
 
 
 ## Install
