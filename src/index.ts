@@ -39,7 +39,7 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (
 
 						// Add `data-at` attribute with filename and location
 						const dataAtAttr = t.jsxAttribute(
-							t.jsxIdentifier("data-at"),
+							t.jsxIdentifier(opt.attribute),
 							t.stringLiteral(
 								`${filename}:${path.node.loc.start.line}-${path.node.loc.end.line}`,
 							),
