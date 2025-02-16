@@ -2,22 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-jsx-source?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-jsx-source)
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
-
-## Template Usage
-
-To use this template, clone it down using:
-
-```bash
-npx degit unplugin/unplugin-jsx-source my-unplugin
-```
-
-And do a global replacement of `unplugin-jsx-source` with your plugin name.
-
-Then you can start developing your unplugin 🔥
-
-To test your plugin, run: `pnpm run dev`
-To release a new version, run: `pnpm run release`
+A plugin designed to automatically annotate your JSX components with a `data-at`(configurable) attribute, indicating the file name and line number for easier debugging and development.
 
 ## Install
 
@@ -120,3 +105,11 @@ build({
 ```
 
 <br></details>
+
+## Made with
+
+https://github.com/unplugin/unplugin-starter/
+
+cause I saw that idea again from Nate (Tamagui's author) https://x.com/natebirdman/status/1890913196967419958
+
+although Astro also has it with `<div data-astro-source-file="/absolute/path/file.astro" data-astro-source-loc="72:49"`

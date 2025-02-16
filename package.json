@@ -5,16 +5,22 @@
   "packageManager": "pnpm@10.3.0",
   "description": "",
   "license": "MIT",
-  "homepage": "https://github.com/antfu/unplugin-jsx-source#readme",
+  "homepage": "https://github.com/astahmer/unplugin-jsx-source#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/unplugin-jsx-source.git"
+    "url": "git+https://github.com/astahmer/unplugin-jsx-source.git"
   },
   "bugs": {
-    "url": "https://github.com/antfu/unplugin-jsx-source/issues"
+    "url": "https://github.com/astahmer/unplugin-jsx-source/issues"
   },
   "keywords": [
     "unplugin",
+    "jsx",
+    "source",
+    "data-at",
+    "data-source",
+    "annotate",
+    "devtools",
     "vite",
     "webpack",
     "rollup",
