@@ -24,13 +24,23 @@ export const transform = (code: string, id: string, opt: OptionsResolved) => {
 				!path.isJSXFragment() &&
 				path.node.name.name !== "Fragment"
 			) {
+				const isComponent = path.node.name.name[0].toUpperCase() === path.node.name.name[0];
+
+				// Check if this DOM element has spread props that might override data attributes
+				const hasSpreadProps = path.node.attributes.some(
+					(attr) => attr.type === "JSXSpreadAttribute"
+				);
+
 				const newAttributes = [] as t.JSXAttribute[];
+
+				// Only add data-at to components, or DOM elements without spread props
 				if (
 					opt.attributes.at &&
 					!path.node.attributes.some(
 						(a) =>
 							a.type === "JSXAttribute" && a.name.name === opt.attributes.at,
-					)
+					) &&
+					(!hasSpreadProps)
 				) {
 					const fileName = opt.transformFileName(id, path.node.loc);
 					const dataAtAttr = t.jsxAttribute(
@@ -40,12 +50,14 @@ export const transform = (code: string, id: string, opt: OptionsResolved) => {
 					newAttributes.push(dataAtAttr);
 				}
 
+				// Only add data-in to components, or DOM elements without spread props
 				if (
 					opt.attributes.in &&
 					!path.node.attributes.some(
 						(a) =>
 							a.type === "JSXAttribute" && a.name.name === opt.attributes.in,
-					)
+					) &&
+					(!hasSpreadProps)
 				) {
 					const assertHasName = (p: NodePath<t.Node>) =>
 						p.isVariableDeclarator() || p.isFunctionDeclaration();
@@ -65,13 +77,14 @@ export const transform = (code: string, id: string, opt: OptionsResolved) => {
 					}
 				}
 
+				// Only add data-kind to components
 				if (
 					opt.attributes.kind &&
 					!path.node.attributes.some(
 						(a) =>
 							a.type === "JSXAttribute" && a.name.name === opt.attributes.kind,
 					) &&
-					path.node.name.name[0].toUpperCase() === path.node.name.name[0]
+					isComponent
 				) {
 					const dataKindAttr = t.jsxAttribute(
 						t.jsxIdentifier(opt.attributes.kind),
