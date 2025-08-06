@@ -88,7 +88,7 @@
     "dev": "tsup --watch src",
     "lint": "eslint .",
     "play": "pnpm -C playground run dev",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "pnpm run build",
     "release": "bumpp && pnpm publish",
     "start": "tsx src/index.ts",
     "test": "vitest"
