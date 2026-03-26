@@ -1,155 +1,155 @@
 {
-  "name": "unplugin-jsx-source",
-  "type": "module",
-  "version": "0.1.5",
-  "packageManager": "pnpm@10.3.0",
-  "description": "",
-  "license": "MIT",
-  "homepage": "https://github.com/astahmer/unplugin-jsx-source#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/astahmer/unplugin-jsx-source.git"
-  },
-  "bugs": {
-    "url": "https://github.com/astahmer/unplugin-jsx-source/issues"
-  },
-  "keywords": [
-    "unplugin",
-    "jsx",
-    "source",
-    "data-at",
-    "data-source",
-    "annotate",
-    "devtools",
-    "vite",
-    "webpack",
-    "rollup",
-    "transform"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./astro": {
-      "import": "./dist/astro.js",
-      "require": "./dist/astro.cjs"
-    },
-    "./rspack": {
-      "import": "./dist/rspack.js",
-      "require": "./dist/rspack.cjs"
-    },
-    "./vite": {
-      "import": "./dist/vite.js",
-      "require": "./dist/vite.cjs"
-    },
-    "./webpack": {
-      "import": "./dist/webpack.js",
-      "require": "./dist/webpack.cjs"
-    },
-    "./rollup": {
-      "import": "./dist/rollup.js",
-      "require": "./dist/rollup.cjs"
-    },
-    "./esbuild": {
-      "import": "./dist/esbuild.js",
-      "require": "./dist/esbuild.cjs"
-    },
-    "./nuxt": {
-      "import": "./dist/nuxt.js",
-      "require": "./dist/nuxt.cjs"
-    },
-    "./farm": {
-      "import": "./dist/farm.js",
-      "require": "./dist/farm.cjs"
-    },
-    "./types": {
-      "import": "./dist/types.js",
-      "require": "./dist/types.cjs"
-    },
-    "./*": "./*"
-  },
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./*"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch src",
-    "lint": "eslint .",
-    "play": "pnpm -C playground run dev",
-    "prepublishOnly": "pnpm run build",
-    "release": "bumpp && pnpm publish",
-    "start": "tsx src/index.ts",
-    "test": "vitest"
-  },
-  "peerDependencies": {
-    "@farmfe/core": ">=1",
-    "@nuxt/kit": "^3",
-    "@nuxt/schema": "^3",
-    "esbuild": "*",
-    "rollup": "^3",
-    "vite": ">=3",
-    "webpack": "^4 || ^5"
-  },
-  "peerDependenciesMeta": {
-    "@farmfe/core": {
-      "optional": true
-    },
-    "@nuxt/kit": {
-      "optional": true
-    },
-    "@nuxt/schema": {
-      "optional": true
-    },
-    "esbuild": {
-      "optional": true
-    },
-    "rollup": {
-      "optional": true
-    },
-    "vite": {
-      "optional": true
-    },
-    "webpack": {
-      "optional": true
-    }
-  },
-  "dependencies": {
-    "@babel/generator": "^7.29.1",
-    "@babel/parser": "^7.29.2",
-    "@babel/traverse": "^7.29.0",
-    "@babel/types": "^7.29.0",
-    "unplugin": "^3.0.0",
-    "unplugin-utils": "^0.3.1"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^7.7.3",
-    "@biomejs/biome": "2.4.9",
-    "@nuxt/kit": "^4.4.2",
-    "@nuxt/schema": "^4.4.2",
-    "@types/babel__generator": "^7.27.0",
-    "@types/babel__traverse": "^7.28.0",
-    "@types/node": "^25.5.0",
-    "bumpp": "^11.0.1",
-    "eslint": "^10.1.0",
-    "nodemon": "^3.1.14",
-    "rollup": "^4.60.0",
-    "tsup": "^8.5.1",
-    "tsx": "^4.21.0",
-    "typescript": "^6.0.2",
-    "vite": "^8.0.3",
-    "vitest": "^4.1.1",
-    "webpack": "^5.105.4"
-  }
+	"name": "unplugin-jsx-source",
+	"version": "0.1.5",
+	"description": "",
+	"keywords": [
+		"annotate",
+		"data-at",
+		"data-source",
+		"devtools",
+		"jsx",
+		"rollup",
+		"source",
+		"transform",
+		"unplugin",
+		"vite",
+		"webpack"
+	],
+	"homepage": "https://github.com/astahmer/unplugin-jsx-source#readme",
+	"bugs": {
+		"url": "https://github.com/astahmer/unplugin-jsx-source/issues"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/astahmer/unplugin-jsx-source.git"
+	},
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"main": "dist/index.cjs",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"typesVersions": {
+		"*": {
+			"*": [
+				"./dist/*",
+				"./*"
+			]
+		}
+	},
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./astro": {
+			"import": "./dist/astro.js",
+			"require": "./dist/astro.cjs"
+		},
+		"./rspack": {
+			"import": "./dist/rspack.js",
+			"require": "./dist/rspack.cjs"
+		},
+		"./vite": {
+			"import": "./dist/vite.js",
+			"require": "./dist/vite.cjs"
+		},
+		"./webpack": {
+			"import": "./dist/webpack.js",
+			"require": "./dist/webpack.cjs"
+		},
+		"./rollup": {
+			"import": "./dist/rollup.js",
+			"require": "./dist/rollup.cjs"
+		},
+		"./esbuild": {
+			"import": "./dist/esbuild.js",
+			"require": "./dist/esbuild.cjs"
+		},
+		"./nuxt": {
+			"import": "./dist/nuxt.js",
+			"require": "./dist/nuxt.cjs"
+		},
+		"./farm": {
+			"import": "./dist/farm.js",
+			"require": "./dist/farm.cjs"
+		},
+		"./types": {
+			"import": "./dist/types.js",
+			"require": "./dist/types.cjs"
+		},
+		"./*": "./*"
+	},
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch src",
+		"fmt": "oxfmt --write .",
+		"lint": "oxlint . && oxfmt --check .",
+		"play": "pnpm -C playground run dev",
+		"prepublishOnly": "pnpm run build",
+		"release": "bumpp && pnpm publish",
+		"start": "tsx src/index.ts",
+		"test": "vitest"
+	},
+	"dependencies": {
+		"@oxc-project/types": "^0.121.0",
+		"magic-string": "^0.30.21",
+		"oxc-parser": "^0.121.0",
+		"unplugin": "^3.0.0",
+		"unplugin-utils": "^0.3.1"
+	},
+	"devDependencies": {
+		"@nuxt/kit": "^4.4.2",
+		"@nuxt/schema": "^4.4.2",
+		"@types/node": "^25.5.0",
+		"bumpp": "^11.0.1",
+		"nodemon": "^3.1.14",
+		"oxfmt": "^0.42.0",
+		"oxlint": "^1.57.0",
+		"rollup": "^4.60.0",
+		"tsup": "^8.5.1",
+		"tsx": "^4.21.0",
+		"typescript": "^6.0.2",
+		"vite": "^8.0.3",
+		"vitest": "^4.1.1",
+		"webpack": "^5.105.4"
+	},
+	"peerDependencies": {
+		"@farmfe/core": ">=1",
+		"@nuxt/kit": "^3",
+		"@nuxt/schema": "^3",
+		"esbuild": "*",
+		"rollup": "^3",
+		"vite": ">=3",
+		"webpack": "^4 || ^5"
+	},
+	"peerDependenciesMeta": {
+		"@farmfe/core": {
+			"optional": true
+		},
+		"@nuxt/kit": {
+			"optional": true
+		},
+		"@nuxt/schema": {
+			"optional": true
+		},
+		"esbuild": {
+			"optional": true
+		},
+		"rollup": {
+			"optional": true
+		},
+		"vite": {
+			"optional": true
+		},
+		"webpack": {
+			"optional": true
+		}
+	},
+	"engines": {
+		"node": "^20.19.0 || >=22.12.0"
+	},
+	"packageManager": "pnpm@10.3.0"
 }

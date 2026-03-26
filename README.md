@@ -6,8 +6,6 @@ A plugin designed to automatically annotate your JSX components with a `data-at`
 
 <img width="613" alt="image" src="https://github.com/user-attachments/assets/0e3fb65f-5d01-4a19-9888-35e8eff94afb" />
 
-
-
 ## Install
 
 ```bash
@@ -19,13 +17,15 @@ npm i unplugin-jsx-source
 
 ```ts
 // vite.config.ts
-import jsxSource from 'unplugin-jsx-source/vite'
+import jsxSource from "unplugin-jsx-source/vite";
 
 export default defineConfig({
-  plugins: [
-   jsxSource({ /* options */ }),
-  ],
-})
+	plugins: [
+		jsxSource({
+			/* options */
+		}),
+	],
+});
 ```
 
 Example: [`playground/`](./playground/)
@@ -37,13 +37,15 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import jsxSource from 'unplugin-jsx-source/rollup'
+import jsxSource from "unplugin-jsx-source/rollup";
 
 export default {
-  plugins: [
-   jsxSource({ /* options */ }),
-  ],
-}
+	plugins: [
+		jsxSource({
+			/* options */
+		}),
+	],
+};
 ```
 
 <br></details>
@@ -54,11 +56,13 @@ export default {
 ```ts
 // webpack.config.js
 module.exports = {
-  /* ... */
-  plugins: [
-    require('unplugin-jsx-source/webpack')({ /* options */ })
-  ]
-}
+	/* ... */
+	plugins: [
+		require("unplugin-jsx-source/webpack")({
+			/* options */
+		}),
+	],
+};
 ```
 
 <br></details>
@@ -69,10 +73,15 @@ module.exports = {
 ```ts
 // nuxt.config.js
 export default defineNuxtConfig({
-  modules: [
-    ['unplugin-jsx-source/nuxt', { /* options */ }],
-  ],
-})
+	modules: [
+		[
+			"unplugin-jsx-source/nuxt",
+			{
+				/* options */
+			},
+		],
+	],
+});
 ```
 
 > This module works for both Nuxt 2 and [Nuxt Vite](https://github.com/nuxt/vite)
@@ -85,12 +94,14 @@ export default defineNuxtConfig({
 ```ts
 // vue.config.js
 module.exports = {
-  configureWebpack: {
-    plugins: [
-      require('unplugin-jsx-source/webpack')({ /* options */ }),
-    ],
-  },
-}
+	configureWebpack: {
+		plugins: [
+			require("unplugin-jsx-source/webpack")({
+				/* options */
+			}),
+		],
+	},
+};
 ```
 
 <br></details>

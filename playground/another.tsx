@@ -1,14 +1,20 @@
-export const Hero = () => <div
->
-    <span>Hero</span>
-    <Nested />
-    <Hello />
+export function Hero() {
+	return (
+		<div>
+			<span>Hero</span>
+			<Nested />
+			<Hello />
+		</div>
+	);
+}
 
-</div>
-
-const Nested = () => <span>Hero.Nested</span>
-const Deep = () => <span>Hero.Hello.Deep</span>
-const Hello = () => <>
-    <span>Hero.Hello</span>
-    <Deep />
-</>
+const Nested = () => <span>Hero.Nested</span>;
+const Deep = () => <span>Hero.Hello.Deep</span>;
+function Hello() {
+	return (
+		<>
+			<span>Hero.Hello</span>
+			<Deep />
+		</>
+	);
+}

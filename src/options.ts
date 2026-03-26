@@ -1,6 +1,11 @@
-import type { ParserOptions } from "@babel/parser";
+import type { ParserOptions as OxcParserOptions } from "oxc-parser";
 import type { FilterPattern } from "unplugin-utils";
-import * as t from "@babel/types";
+
+/** Location shape passed to `transformFileName` (line/column match Babel-style `SourceLocation`). */
+export interface SourceLocation {
+	start: { line: number; column: number };
+	end: { line: number; column: number };
+}
 
 export interface Options {
 	/**
@@ -10,12 +15,13 @@ export interface Options {
 	include?: FilterPattern;
 	exclude?: FilterPattern | undefined;
 	enforce?: "post" | "pre" | undefined;
-	parserOptions?: ParserOptions;
+	/** Options passed to `oxc-parser` `parseSync` (see [ParserOptions](https://www.npmjs.com/package/oxc-parser)). */
+	parserOptions?: OxcParserOptions;
 
 	/**
 	 * The transform function to modify the file name used in the `attributes.at` option
 	 */
-	transformFileName?: (fileName: string, location: t.SourceLocation) => string;
+	transformFileName?: (fileName: string, location: SourceLocation) => string;
 
 	/**
 	 * The attributes to add to the JSX element
@@ -60,14 +66,16 @@ export type OptionsResolved = Overwrite<
 	}
 >;
 
-const defaultTransformFileName = (id: string, loc: t.SourceLocation) => {
+const DEFAULT_INCLUDE_PATTERN = /\.[jt]sx?$/;
+
+function defaultTransformFileName(id: string, loc: SourceLocation): string {
 	const fileName = id.split("/").pop() ?? "unknown";
 	return `${fileName}:${loc.start.line}-${loc.end.line}`;
-};
+}
 
 export function resolveOption(options: Options): OptionsResolved {
 	return {
-		include: options.include || [/\.[jt]sx?$/],
+		include: options.include || [DEFAULT_INCLUDE_PATTERN],
 		exclude: options.exclude || undefined,
 		enforce: options.enforce || undefined,
 		parserOptions: options.parserOptions || {},
