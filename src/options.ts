@@ -14,6 +14,7 @@ export interface Options {
 	 */
 	include?: FilterPattern;
 	exclude?: FilterPattern | undefined;
+	/** @default "pre" */
 	enforce?: "post" | "pre" | undefined;
 	/** Options passed to `oxc-parser` `parseSync` (see [ParserOptions](https://www.npmjs.com/package/oxc-parser)). */
 	parserOptions?: OxcParserOptions;
@@ -77,7 +78,9 @@ export function resolveOption(options: Options): OptionsResolved {
 	return {
 		include: options.include || [DEFAULT_INCLUDE_PATTERN],
 		exclude: options.exclude || undefined,
-		enforce: options.enforce || undefined,
+		// Vite 8 runs `vite:oxc` before normal user plugins; without `pre`, this runs on code
+		// that already had JSX lowered, so nothing matches. Playground used SWC path / order that hid this.
+		enforce: options.enforce || "pre",
 		parserOptions: options.parserOptions || {},
 		transformFileName: options.transformFileName || defaultTransformFileName,
 		attributes: {
