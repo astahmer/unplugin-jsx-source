@@ -77,8 +77,9 @@
 			"require": "./dist/farm.cjs"
 		},
 		"./types": {
-			"import": "./dist/types.js",
-			"require": "./dist/types.cjs"
+			"types": "./dist/options.d.ts",
+			"import": "./dist/options.js",
+			"require": "./dist/options.cjs"
 		},
 		"./*": "./*"
 	},
